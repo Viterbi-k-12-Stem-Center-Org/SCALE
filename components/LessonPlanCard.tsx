@@ -31,11 +31,11 @@ export function LessonPlanCard({ lesson }: LessonPlanCardProps) {
           </p>
         </div>
 
-        <div className="grid gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">
-          <span className="rounded-full bg-stone-100 px-3 py-1 text-stone-700">
+        <div className="flex flex-col items-start gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">
+          <span className="inline-flex w-fit rounded-full bg-stone-100 px-3 py-1 text-stone-700">
             {lesson.subject || "Subject TBD"}
           </span>
-          <span className="rounded-full bg-stone-100 px-3 py-1 text-stone-700">
+          <span className="inline-flex w-fit rounded-full bg-stone-100 px-3 py-1 text-stone-700">
             {lesson.duration || "Duration TBD"}
           </span>
         </div>
