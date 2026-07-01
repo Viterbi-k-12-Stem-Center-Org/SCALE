@@ -379,11 +379,6 @@ export default function LessonPlansPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cardinal">
                 Featured Lesson Plans
               </p>
-              <h2 className="section-heading">A rotating preview of the lesson library</h2>
-              <p className="section-copy">
-                These four lesson plans are selected randomly each time the page loads
-                so the preview changes naturally as educators revisit the library.
-              </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -407,11 +402,6 @@ export default function LessonPlansPage() {
                   ? "Matching lesson plans"
                   : "Browse the full lesson plan library"}
               </h2>
-              <p className="section-copy">
-                {isSearchActive
-                  ? "Results reflect the active search or selected filters."
-                  : "All lesson plans are available below the preview when no search is active."}
-              </p>
             </div>
             {isSearchActive ? (
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
