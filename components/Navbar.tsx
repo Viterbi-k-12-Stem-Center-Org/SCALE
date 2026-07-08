@@ -7,7 +7,7 @@ const navigationItems = [
   { name: "Equipment", link: "/equipment" },
   { name: "Articles", link: "/articles" },
   //{ name: "Resources", link: "/resources" },
-  { name: "Login", link: "/login" }
+  //{ name: "Login", link: "/login" }
 ];
 
 export function Navbar() {
