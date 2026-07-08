@@ -46,15 +46,7 @@ export function FeaturedContent() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cardinal">
               Featured Content
             </p>
-            <h2 className="section-heading">
-              Current highlights for educators and partners
-            </h2>
           </div>
-          <p className="section-copy lg:max-w-2xl">
-            Spotlighted materials surface timely lessons, equipment guides, and
-            supporting scholarship to help partners move from planning to
-            implementation with confidence.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
