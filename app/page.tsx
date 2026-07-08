@@ -2,8 +2,6 @@ import { CardGrid } from "@/components/CardGrid";
 import { FeaturedContent } from "@/components/FeaturedContent";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { PartnerAccess } from "@/components/PartnerAccess";
-/* import { SearchBar } from "@/components/SearchBar";*/
 
 export default function HomePage() {
   return (
@@ -11,7 +9,6 @@ export default function HomePage() {
       <Hero />
       <CardGrid />
       <FeaturedContent />
-      <PartnerAccess />
       <Footer />
     </main>
   );
