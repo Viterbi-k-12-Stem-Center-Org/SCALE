@@ -80,8 +80,8 @@ export default function EquipmentPage() {
     <main className="min-h-screen bg-white text-ink">
       <PageHero
         eyebrow="Equipment"
-        title="Browse STEM hardware and lending-ready tools"
-        description="Equipment listings are organized for quick review, helping partners understand what is available and how each item supports classroom implementation."
+        title="Browse STEM hardware and tools"
+        description=" "
       />
 
       <section className="py-10">
@@ -162,36 +162,6 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      <section id="cosmic-myturn-inventory-preview" className="py-5 scroll-mt-28">
-        <div className="section-shell space-y-6">
-          <div className="flex flex-col gap-6">
-            <CosmicEmbed
-              title="COSMIC/MyTurn Inventory Preview"
-              src="https://vk12cosmic.myturn.com/library/inventory/browse"
-              fallbackLabel="COSMIC/MyTurn Inventory"
-              fallbackHref="https://vk12cosmic.myturn.com/library/inventory/browse"
-            />
-            <CosmicEmbed
-              title="COSMIC Inventory Preview"
-              src="https://vk12cosmic.org/#/inventory"
-              fallbackLabel="COSMIC Inventory"
-              fallbackHref="https://vk12cosmic.org/#/inventory"
-            />
-          </div>
-
-          {/* Archived floating arrow indicator for later restoration.
-          <div className="flex justify-center pb-2 pt-1">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-200 bg-white text-cardinal shadow-soft">
-              <span className="text-2xl leading-none" aria-hidden="true">
-                &#8595;
-              </span>
-            </div>
-          </div>
-          */}
-        </div>
-      </section>
-
-      {/* Archived old showcase cards and section links for later restoration.
       <section className="py-5">
         <div className="section-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {equipmentItems.map((item) => (
@@ -209,6 +179,27 @@ export default function EquipmentPage() {
               </Link>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="cosmic-myturn-inventory-preview" className="py-5 scroll-mt-28">
+        <div className="section-shell space-y-6">
+          <div className="flex flex-col gap-6">
+            {/*
+            <CosmicEmbed
+              title="COSMIC/MyTurn Inventory Preview"
+              src="https://vk12cosmic.myturn.com/library/inventory/browse?embed=true"
+              fallbackLabel="COSMIC/MyTurn Inventory"
+              fallbackHref="https://vk12cosmic.myturn.com/library/inventory/browse"
+            />
+            */}
+            <CosmicEmbed
+              title="COSMIC Inventory Preview"
+              src="https://vk12cosmic.org/#/inventory"
+              fallbackLabel="COSMIC Inventory"
+              fallbackHref="https://vk12cosmic.org/#/inventory"
+            />
+          </div>
         </div>
       </section>
 
@@ -238,7 +229,6 @@ export default function EquipmentPage() {
       >
         <EquipmentCarousel items={kitsEquipment} />
       </SectionContainer>
-      */}
 
       <Footer />
     </main>
