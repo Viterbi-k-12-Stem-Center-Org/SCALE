@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { submitAccessRequest } from "@/lib/auth-sheet";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 // Temporary request-access workflow that writes to the Google Apps Script request tab.
 // This can later be replaced by a form backend, queue, or identity provider flow.
