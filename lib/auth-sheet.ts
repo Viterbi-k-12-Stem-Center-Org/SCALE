@@ -51,16 +51,14 @@ type RequestAccessResponse = AuthAppsScriptBaseResponse & {
   }>;
 };
 
-const AUTH_APPS_SCRIPT_URL = process.env.AUTH_APPS_SCRIPT_URL?.trim();
-
 function getAuthAppsScriptUrl() {
-  if (!AUTH_APPS_SCRIPT_URL) {
-    throw new Error(
-      "AUTH_APPS_SCRIPT_URL is not configured. Add your Google Apps Script web app URL to .env.local."
-    );
+  const authAppsScriptUrl = process.env.AUTH_APPS_SCRIPT_URL?.trim();
+
+  if (!authAppsScriptUrl) {
+    throw new Error("AUTH_APPS_SCRIPT_URL is not configured.");
   }
 
-  return AUTH_APPS_SCRIPT_URL;
+  return authAppsScriptUrl;
 }
 
 async function callAuthAppsScript<T extends AuthAppsScriptBaseResponse>(payload: Record<string, unknown>) {
