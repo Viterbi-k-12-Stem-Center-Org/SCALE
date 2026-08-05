@@ -135,28 +135,7 @@ export default function EquipmentPage() {
           ))}
         </div>
       </section>
-
-      <section id="cosmic-myturn-inventory-preview" className="py-5 scroll-mt-28">
-        <div className="section-shell space-y-6">
-          <div className="flex flex-col gap-6">
-            {/*
-            <CosmicEmbed
-              title="COSMIC/MyTurn Inventory Preview"
-              src="https://vk12cosmic.myturn.com/library/inventory/browse?embed=true"
-              fallbackLabel="COSMIC/MyTurn Inventory"
-              fallbackHref="https://vk12cosmic.myturn.com/library/inventory/browse"
-            />
-            */}
-            <CosmicEmbed
-              title="COSMIC Inventory Preview"
-              src="https://vk12cosmic.org/#/inventory"
-              fallbackLabel="COSMIC Inventory"
-              fallbackHref="https://vk12cosmic.org/#/inventory"
-            />
-          </div>
-        </div>
-      </section>
-
+      
       <SectionContainer
         id="robotics"
         eyebrow="Robotics"
