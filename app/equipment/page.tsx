@@ -29,52 +29,6 @@ const equipmentItems = [
   },
 ];
 
-function CosmicEmbed({
-  title,
-  src,
-  fallbackLabel,
-  fallbackHref
-}: {
-  title: string;
-  src: string;
-  fallbackLabel: string;
-  fallbackHref: string;
-}) {
-  return (
-    <div className="surface-card overflow-hidden border-cardinal/10 bg-white p-0 shadow-soft">
-      <div className="border-b border-stone-200 bg-parchment/40 px-5 py-4 sm:px-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cardinal">
-          {title}
-        </p>
-      </div>
-
-      <div className="bg-stone-50 p-3 sm:p-4">
-        <iframe
-          src={src}
-          title={title}
-          className="h-[720px] w-full rounded-2xl border border-stone-200 bg-white shadow-sm sm:h-[860px] lg:h-[980px]"
-          loading="lazy"
-        />
-      </div>
-
-      <div className="border-t border-stone-200 px-5 py-4 sm:px-6">
-        <p className="text-sm leading-7 text-stone-600">
-          If the embedded preview does not load, open it directly here:{" "}
-          <a
-            href={fallbackHref}
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-cardinal transition hover:underline"
-          >
-            {fallbackLabel}
-          </a>
-          .
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default function EquipmentPage() {
   return (
     <main className="min-h-screen bg-white text-ink">
