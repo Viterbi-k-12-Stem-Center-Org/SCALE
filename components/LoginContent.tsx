@@ -117,13 +117,6 @@ export function LoginContent() {
               >
                 {isSubmitting ? "Signing in..." : "Sign In"}
               </button>
-
-              <a
-                href="/api/auth/logout?next=/"
-                className="inline-flex items-center justify-center rounded-full border border-cardinal px-6 py-3 text-sm font-semibold text-cardinal transition hover:bg-cardinal hover:text-white"
-              >
-                Logout
-              </a>
             </div>
           </form>
         </article>
