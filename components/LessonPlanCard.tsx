@@ -56,9 +56,7 @@ export function LessonPlanCard({ lesson }: LessonPlanCardProps) {
 
       {lesson.fileUrl ? (
         <Link
-          href={lesson.fileUrl}
-          target="_blank"
-          rel="noreferrer"
+          href={`/lesson-plans/${encodeURIComponent(lesson.id)}`}
           className="mt-8 inline-flex items-center justify-center rounded-full border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-cardinal hover:text-cardinal"
         >
           View

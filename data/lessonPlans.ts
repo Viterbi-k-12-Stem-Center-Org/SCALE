@@ -9,6 +9,53 @@ export type LessonPlan = {
   fileUrl: string;
 };
 
+export function getLessonPlanById(lessons: LessonPlan[], lessonId: string) {
+  const normalizedId = normalizeDisplayText(lessonId);
+  return lessons.find((lesson) => normalizeDisplayText(lesson.id) === normalizedId) ?? null;
+}
+
+export function extractGoogleDriveFileId(fileUrl: string) {
+  const normalized = normalizeDisplayText(fileUrl);
+  if (!normalized) return "";
+
+  const patterns = [
+    /(?:docs|drive)\.google\.com\/(?:document|presentation|spreadsheets|file)\/d\/([a-zA-Z0-9_-]+)/,
+    /drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/,
+    /[?&]id=([a-zA-Z0-9_-]+)/
+  ];
+
+  for (const pattern of patterns) {
+    const match = normalized.match(pattern);
+    if (match?.[1]) return match[1];
+  }
+
+  return "";
+}
+
+export function buildLessonPlanDocumentExportUrl(fileUrl: string) {
+  const normalized = normalizeDisplayText(fileUrl);
+  const fileId = extractGoogleDriveFileId(normalized);
+  if (!fileId) return "";
+
+  if (/docs\.google\.com\/document\//i.test(normalized)) {
+    return `https://docs.google.com/document/d/${fileId}/export?format=pdf`;
+  }
+
+  if (/docs\.google\.com\/presentation\//i.test(normalized)) {
+    return `https://docs.google.com/presentation/d/${fileId}/export?format=pdf`;
+  }
+
+  if (/docs\.google\.com\/spreadsheets\//i.test(normalized)) {
+    return `https://docs.google.com/spreadsheets/d/${fileId}/export?format=pdf`;
+  }
+
+  if (/docs\.google\.com\/drawings\//i.test(normalized)) {
+    return `https://docs.google.com/drawings/d/${fileId}/export?format=pdf`;
+  }
+
+  return `https://drive.google.com/uc?export=download&id=${fileId}`;
+}
+
 type CsvRow = Record<string, string>;
 
 export const LESSON_PLANS_CSV_URL =

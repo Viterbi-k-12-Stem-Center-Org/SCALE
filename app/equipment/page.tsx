@@ -101,6 +101,18 @@ export default function EquipmentPage() {
               </article>
             </div>
 
+            <div className="mt-6 flex justify-center">
+              <a
+                href="#cosmic-myturn-inventory-preview"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cardinal/15 bg-white text-cardinal shadow-soft transition hover:-translate-y-0.5 hover:border-cardinal/30 hover:text-cardinal"
+                aria-label="Jump to COSMIC/MyTurn Inventory Preview"
+              >
+                <span className="animate-bounce text-xl leading-none" aria-hidden="true">
+                  &#8595;
+                </span>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
