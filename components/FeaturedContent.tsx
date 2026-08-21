@@ -26,6 +26,10 @@ type FeaturedCard = {
   external?: boolean;
 };
 
+type FeaturedContentProps = {
+  showViewLinks?: boolean;
+};
+
 function shuffle<T>(items: T[]) {
   const pool = [...items];
 
@@ -82,7 +86,7 @@ function pickRandomUnique<T extends { key: string }>(
   return shuffle(pool.filter((item) => !pickedKeys.has(item.key))).slice(0, count);
 }
 
-export function FeaturedContent() {
+export function FeaturedContent({ showViewLinks = true }: FeaturedContentProps) {
   const [lessonPlans, setLessonPlans] = useState<LessonPlan[]>([]);
   const [featuredCards, setFeaturedCards] = useState<FeaturedCard[]>([]);
 
@@ -185,23 +189,25 @@ export function FeaturedContent() {
                   {item.description}
                 </p>
               </div>
-              {item.external ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-auto inline-flex w-fit items-center rounded-full border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-cardinal hover:text-cardinal"
-                >
-                  View
-                </a>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="mt-auto inline-flex w-fit items-center rounded-full border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-cardinal hover:text-cardinal"
-                >
-                  View
-                </Link>
-              )}
+              {showViewLinks ? (
+                item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-auto inline-flex w-fit items-center rounded-full border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-cardinal hover:text-cardinal"
+                  >
+                    View
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="mt-auto inline-flex w-fit items-center rounded-full border border-stone-300 px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-cardinal hover:text-cardinal"
+                  >
+                    View
+                  </Link>
+                )
+              ) : null}
             </article>
           ))}
         </div>

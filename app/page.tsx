@@ -8,7 +8,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-white text-ink">
       <Hero />
       <CardGrid />
-      <FeaturedContent />
+      <FeaturedContent showViewLinks={false} />
       <Footer />
     </main>
   );
