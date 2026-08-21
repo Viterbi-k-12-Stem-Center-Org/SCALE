@@ -67,7 +67,7 @@ export default async function ProfilePage() {
 
             <div className="mt-8 flex justify-center">
               <a
-                href="/api/auth/logout?next=/login"
+                href="/api/auth/logout?next=/"
                 className="inline-flex items-center justify-center rounded-full bg-cardinal px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7d0000]"
               >
                 Log Out
